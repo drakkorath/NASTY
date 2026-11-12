@@ -6,6 +6,30 @@ It is written in pure Go with the [Gio](https://gioui.org) UI toolkit. No web vi
 
 > **Status:** early and actively developed. It works on the author's NixOS laptop, but expect rough edges. NASTY always test-builds your configuration before applying it, and NixOS keeps every previous generation, so mistakes are recoverable.
 
+## Quick start
+
+You need NixOS with [flakes enabled](https://nixos.wiki/wiki/Flakes) and the one-time setup below.
+
+**Try it without installing anything:**
+
+```
+nix run github:drakkorath/NASTY
+```
+
+**Install it** (adds `nasty` to your PATH and to your app menu and launchers):
+
+```
+nix profile add github:drakkorath/NASTY
+```
+
+To remove it later: `nix profile remove nasty`.
+
+If flakes are not enabled yet, add this line to `/etc/nixos/configuration.nix` and run `sudo nixos-rebuild switch`:
+
+```nix
+nix.settings.experimental-features = [ "nix-command" "flakes" ];
+```
+
 ## What it does
 
 | Tab | What you can do |
@@ -50,9 +74,9 @@ imports = [
 
 NASTY creates `nasty-config.nix` the first time you apply a change. NASTY warns you at startup if your configuration is missing the import line.
 
-## Building
+## Building from source
 
-Get a shell with Go and the libraries Gio needs:
+Prefer to build it yourself? Get a shell with Go and the libraries Gio needs:
 
 ```
 git clone https://github.com/drakkorath/NASTY.git
