@@ -99,4 +99,4 @@ Issues and ideas are welcome. This is a learning project, so friendly suggestion
 
 ## License
 
-No license chosen yet. Until one is added, all rights are reserved by the author.
+MIT. Free for anyone to use, change and share. See [LICENSE](LICENSE).
